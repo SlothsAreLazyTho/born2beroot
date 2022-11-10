@@ -4,7 +4,7 @@
 
 #Network (Unfortunately debian doesn't use lshw at default... )
 ADAPTER="enp0s3"
-MAC_ADDR=$(ip addr show $ADAPTER | grep "ether" | cut -c 19-32)
+MAC_ADDR=$(ip addr show $ADAPTER | grep "ether" | cut -c 16-32)
 
 # Cpu 
 CPU_PERC=$(top -b -n1 | grep "%Cpu" | cut -c 10- | awk '{ printf("%.1f", $1 + $3) }')
