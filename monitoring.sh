@@ -21,7 +21,6 @@ then
 	USING_LVM="yes"
 fi
 
-
 # Memory
 MEM_TOTAL=$(free -m | grep "^Mem" | awk '{print $2}')
 MEM_USED=$(free -m | grep "^Mem" | awk '{print $3}')
@@ -32,7 +31,7 @@ wall "		#Architecture: $(uname -a)
 		#vCPU: $VCPU_TOTAL
 		#Memory Usage: $MEM_USED/${MEM_TOTAL}MB (${MEM_PERC}%)
 		#Disk Usage: $DISK_USED/${DISK_TOTAL}G ($DISK_PERC)
-		#CPU load: $CPU_PERC%
+		#CPU load: ${CPU_PERC}%
 		#Last boot: $(who -b | cut -c 25-40)
 		#LVM use: $USING_LVM
 		#Connections TCP : $(who | wc -l) ESTABLISHED
