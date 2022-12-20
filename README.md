@@ -90,6 +90,6 @@ sets the localhost variable to the new hostname automatically.
 
 # Monitoring script:
 
-[Click here](https://github.com/SlothsAreLazyTho/born2beroot/monitoring.sh) to view the script.
+[Click here](https://github.com/SlothsAreLazyTho/born2beroot/blob/main/monitoring.sh) to view the script.
 
 
