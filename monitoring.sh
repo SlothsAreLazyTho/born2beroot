@@ -11,7 +11,7 @@ VCPU_TOTAL=$(cat /proc/cpuinfo | grep "^physical id" | uniq | wc -l)
 # Disk
 DISK_USED=$(df 	-Bm | awk '{ j += $3 } END { print j }')
 DISK_TOTAL=$(lsblk  | grep "^sda" | cut -c 32- | awk '{ print $3 }') #More accurate.
-DISK_PERC=$(df 	-Bm | awk '{ k += $3 } {m += $4 } END { printf("%d", m/k*100)}')
+DISK_PERC=$(df 	-Bm | awk '{ k += $3 } {m += $4 } END { printf("%d", k/m*100)}')
 USING_LVM="no"
 
 if $(cat /etc/fstab | grep -q /dev/mapper/);
@@ -28,7 +28,7 @@ wall "	#Architecture: $(uname -a)
 			#CPU physical: $(nproc --all)
 			#vCPU: $VCPU_TOTAL
 			#Memory Usage: $MEM_USED/${MEM_TOTAL}MB (${MEM_PERC}%)
-			#Disk Usage: $DISK_USED/${DISK_TOTAL}G (${DISK_PERC}%)
+			#Disk Usage: $DISK_USED/${DISK_TOTAL} (${DISK_PERC}%)
 			#CPU load: $CPU_PERC%
 			#Last boot: $(who -b | cut -c 25-)
 			#LVM use: $USING_LVM
