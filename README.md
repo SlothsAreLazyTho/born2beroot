@@ -6,6 +6,8 @@ All important notes have been written down in this document. All the other stuff
 
 I used debian 11.6.0(Bullseye) for this subject. [Click here]("debian-11.6.0-amd64-netinst.iso").
 Funny enough all codenames from Debian are from the movie Toy Story. This is because the project leader on the Debian project actually used to work at pixar when they started Debian. [Referral]("https://www.debian.org/doc/manuals/debian-faq/ftparchives#sourceforcodenames")
+> The decision of using Toy Story names was made by Bruce Perens who was, at the time, the Debian Project Leader and was working also at Pixar, the company that produced the movies.
+
 # Password Policy:
 	
 Flags for the password policy:
@@ -82,7 +84,7 @@ sr0                           11:0    1 1024M  0 rom
 
 # Hostname:
 Set hostname through ``hostnamectl`` to avoid networking errors. This command 
-sets the localhost variable to the new hostname automatically (sometimes it doesn't)
+**doesn't** set the hostname variable in ``/etc/hosts``. During eval you cannot fail on this.
 
 ### Commands:
 - hostnamectl --set-hostname -> To set the hostname
